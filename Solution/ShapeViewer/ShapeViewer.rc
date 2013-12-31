@@ -1,0 +1,498 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\ShapeViewer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDR_MAINFRAME DIALOGEX 0, 0, 338, 16
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Microsoft Sans Serif", 400, 0, 0xCC
+BEGIN
+    PUSHBUTTON      "+",IDC_BTN_ZOOM_IN,42,0,18,15
+    PUSHBUTTON      "-",IDC_BTN_ZOOM_OUT,60,0,18,15
+    COMBOBOX        IDC_CMB_ZOOM,119,1,48,80,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "По размеру окна",IDC_BTN_FIT_ZOOM,174,0,69,14
+    LTEXT           "Масштаб:",IDC_STATIC,6,4,34,8
+    PUSHBUTTON      "100 %",IDC_BTN_RESTORE_ZOOM,84,0,28,14
+END
+
+IDD_LAYERS DIALOGEX 0, 0, 118, 278
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Вверх",IDC_BTN_UP,60,168,50,14
+    PUSHBUTTON      "Вниз",IDC_BTN_DOWN,60,186,50,14
+    PUSHBUTTON      "Добавить слой",IDC_BTN_ADD_LAYER,6,210,102,18
+    PUSHBUTTON      "Удалить слой",IDC_BTN_DEL_LAYER,6,234,102,18
+    PUSHBUTTON      "Выбрать цвет",IDC_BTN_SEL_COLOR,6,258,102,18
+    CONTROL         "",IDC_LST_LAYERS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | 
+                    LVS_NOSORTHEADER | WS_TABSTOP,6,18,102,144
+    CONTROL         "Видимый",IDC_CHK_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,192,46,10
+    CONTROL         "",IDC_STXT_COLOR,"Static",SS_BLACKRECT,6,168,15,13
+    LTEXT           "Слои",IDC_STXT_HEAD,49,6,18,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDR_MAINFRAME DLGINIT
+BEGIN
+    IDC_CMB_ZOOM, 0x403, 6, 0
+0x3031, 0x3030, 0x0025, 
+    IDC_CMB_ZOOM, 0x403, 5, 0
+0x3035, 0x2530, "\000" 
+    IDC_CMB_ZOOM, 0x403, 5, 0
+0x3034, 0x2530, "\000" 
+    IDC_CMB_ZOOM, 0x403, 5, 0
+0x3033, 0x2530, "\000" 
+    IDC_CMB_ZOOM, 0x403, 5, 0
+0x3032, 0x2530, "\000" 
+    IDC_CMB_ZOOM, 0x403, 5, 0
+0x3031, 0x2530, "\000" 
+    IDC_CMB_ZOOM, 0x403, 4, 0
+0x3035, 0x0025, 
+    IDC_CMB_ZOOM, 0x403, 4, 0
+0x3532, 0x0025, 
+    IDC_CMB_ZOOM, 0x403, 4, 0
+0x3031, 0x0025, 
+    IDC_CMB_ZOOM, 0x403, 3, 0
+0x2535, "\000" 
+    IDC_CMB_ZOOM, 0x403, 3, 0
+0x2532, "\000" 
+    IDC_CMB_ZOOM, 0x403, 3, 0
+0x2531, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Файл"
+    BEGIN
+        MENUITEM "&Открыть...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "В&ыход",                      ID_APP_EXIT
+    END
+    POPUP "&Вид"
+    BEGIN
+        MENUITEM "Панель &инструментов",        ID_VIEW_TOOLBAR
+        MENUITEM "Масштаб",                     IDM_ZOOM, CHECKED
+    END
+    POPUP "&Масштаб"
+    BEGIN
+        MENUITEM "&Увеличить",                  ID_ZOOM_IN
+        MENUITEM "У&меньшить",                  ID_ZOOM_OUT
+        MENUITEM "&Вернуть масштаб",            ID_RESTORE_SCALE
+        MENUITEM "&По размеру окна",            ID_FIT_SCALE
+    END
+    POPUP "&Слои"
+    BEGIN
+        MENUITEM "Добавить слой ...\tCtrl+A",   ID_ADD_LAYER
+    END
+    POPUP "С&правка"
+    BEGIN
+        MENUITEM "&О программе",                ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_LAYERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 111
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 271
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "ShapeViewer\n\nShapeViewer\n\n\nShapeViewer.Document\nShapeViewer.Document"
+    IDS_WARN_DELETE_LAYER   "Вы действительно хотите удалить выбранный слой?"
+    IDS_ERR_BAD_BOUNDBOX2   "Открываемый файл поврежден.\nПри считывании Bounding Box был достигнут конец файла.\nНомер записи: %i\nДлинна содержимого записи: %i\nФайл: %s"
+    IDS_ERR_SHAPE_BBOX_OUT_OF_BBOX 
+                            "Открываемый файл имеет логическую ошибку.\nBounding Box фигуры полностью или частично находится за пределами Bounding Box файла.\nНомер записи: %i\nДлинна содержимого записи: %i\nФайл: %s"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ShapeViewer"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    IDB_BTN_OPEN            "Открыть файл"
+    IDS_ERR_BAD_SIGNATURE   "Открываемый файл не является Shape-файлом.\nПричина: При чтении сигнатуры достигнут конец файла.\n Файл: %s"
+    IDS_ERR_ERROR           "Ошибка"
+    IDB_EXIT                "Выход"
+    IDB_PRINT               "Распечатать"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERR_BAD_SIGNATURE2  "Открываемый файл не является Shape-файлом.\nПричина: Неверная сигнатура.\nФайл: %s"
+    IDS_ERR_BAD_FILE_LEN    "Открываемый файл поврежден.\nПри чтении длинны файла достигнут конец файла.\nФайл: %s"
+    IDS_ERR_BAD_FILE_LEN2   "Файл поврежден. Реальная длинна файла не совпадает с контрольной длинной.\nФайл: %s"
+    IDS_ERR_FILE_OPEN_ERROR "Ошибка открытия файла"
+    IDS_ERR_BAD_VERSION     "Открываемый файл поврежден.\nПри чтении версии файла достигнут конец файла\nФайл: %s"
+    IDS_ERR_FILE_NEW_VERSION 
+                            "Неподдерживаемая версия файла \n%s.\n Открываемый файл имеет более новую версию: ver %i.\nТекущая версия программы: %i\nДля открытия этого файла обновите версию вашей программы."
+    IDS_ERR_BAD_SHAPE_TYPE  "Открываемый файл поврежден.\nПри считывании типа фигур был достигнут конец файла\nФайл: %s"
+    IDS_ERR_BAD_SHAPE_TYPE2 "Открываемый файл поврежден.\nНеизвестный тип фигуры: %i/nФайл: %s"
+    IDS_ERR_BAD_BOUNDBOX    "Открываемый файл поврежден.\nПри считывании Bounding Box был достигнут конец файла.\nФайл: %s"
+    IDS_ERR_BAD_RECORD_NUMBER "Открываемый файл не содержит фигур."
+    IDS_ERR_BAD_CONTENT_LEN "Открываемый файл поврежден.\nПричина: при считывании длинны содержимого записи №%i достигнут конец файла.\nТекущая позиция: %i\nФайл: %s"
+    IDS_ERR_BAD_RECORD_NUMBER2 
+                            "Одна из фигур в файле повреждена в следствии повреждения файла.\n Причина: номер записи должен быть положительным числом.\nНомер текущей записи: %i\nТекущая позиция: %i\nФайл: %s"
+    IDS_ERR_BAD_SHAPE_T     "Открываемый файл поврежден.\nПри чтении типа фигуры типа '%s' достигнут конец файла.\nНомер записи: %i\nДлинна содержимого записи: %i\nФайл: %s"
+    IDS_ERR_BAD_SHAPE_T2    "Открываемый файл поврежден.\n Неверный тип фигуры: текущий тип: %i - %s, должен быть: %i - %s\nНомер записи: %i\nДлинна содержимого записи: %i\nФайл: %s"
+    IDS_ERR_BAD_DOT_COORD   "Открываемый файл поврежден.\nПри считывании координат точки был достигнут конец файла\nНомер записи: %i\nДлинна содержимого записи: %i\nФайл: %s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERR_GEOMETRY_ERROR  "Ошибка геометрии в файле"
+    IDS_ERR_DOT_OUT_OF_BOUNDBOX 
+                            "Открываемый файл имеет логическую ошибку.\nТочка находится за пределами Bounding Box.\nКоординаты точки: (%f;%f).\nНомер записи: %i\nДлинна содержимого записи: %i\nФайл: %s"
+    IDS_ERR_BAD_ARC_NUM_PARTS 
+                            "Одна из фигур в файле повреждена в следствии повреждения файла.\nПричина: при чтении поля NumParts был достигнут конец файла.\nНомер записи: %i\nДлинна содержимого записи: %i\nПозиция в файле: %i\nФайл: %s"
+    IDS_ERR_BAD_ARC_NUM_POINTS 
+                            "Одна из фигур в файле повреждена в следствии повреждения файла.\nПричина: при чтении поля NumPoints был достигнут конец файла.\nНомер записи: %i\nДлинна содержимого записи: %i\nПозиция в файле: %i\nФайл: %s"
+    IDS_ERR_BAD_ARC_NUM_PARTS2 
+                            "Открываемый файл имеет логическую ошибку.\nПричина: поля NumParts дожны содержать положительные числа. В записи № %i это поле имеет значение %i\nДлинна содержимого записи: %i\nПозиция в файле: %i\nФайл: %s"
+    IDS_ERR_BAD_ARC_NUM_POINTS2 
+                            "Открываемый файл имеет логическую ошибку.\nПричина: поля NumPoints дожны содержать положительные числа. В записи № %i это поле имеет значение %i\nДлинна содержимого записи: %i\nПозиция в файле: %i\nФайл: %s"
+    IDS_ERR_BAD_ARC_PARTS   "Одна из фигур в файле повреждена в следствии повреждения файла.\nПричина: при чтении массива полей Parts был достигнут конец файла.\nНомер записи: %i\nДлинна содержимого записи: %i\nПозиция в файле: %i\nФайл: %s"
+    IDS_ERR_BAD_ARC_PARTS2  "Одна из фигур в файле повреждена в следствии повреждения файла.\nПричина: В массиве индексов Parts найден индекс, выходящий за рамки массива Points. Одна из поли-линий в фигуре %s имеет поврежденный индекс. Это может исказить фигуру.\nНомер записи: %i\nДлинна содержимого записи: %i\nПозиция в файле: %i\nФайл: %s"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About ShapeViewer"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "ShapeViewer Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2006",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ShapeViewer.ico"
+IDR_ShapeViewerTYPE     ICON                    "res\\ShapeViewerDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "ShapeViewer.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "ShapeViewer.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\ShapeViewer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
